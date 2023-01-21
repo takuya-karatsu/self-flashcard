@@ -1,0 +1,18 @@
+current directory: /Users/karatsutakuya/self-flashcard/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.15.0/ext/bootsnap
+/Users/karatsutakuya/.rbenv/versions/3.2.0/bin/ruby -I /Users/karatsutakuya/.rbenv/versions/3.2.0/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Users/karatsutakuya/self-flashcard/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230121-8739-aicjgf sitelibdir\=./.gem.20230121-8739-aicjgf clean
+
+current directory: /Users/karatsutakuya/self-flashcard/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230121-8739-aicjgf sitelibdir\=./.gem.20230121-8739-aicjgf
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/karatsutakuya/self-flashcard/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230121-8739-aicjgf sitelibdir\=./.gem.20230121-8739-aicjgf install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20230121-8739-aicjgf/bootsnap
+
+current directory: /Users/karatsutakuya/self-flashcard/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.15.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230121-8739-aicjgf sitelibdir\=./.gem.20230121-8739-aicjgf clean
