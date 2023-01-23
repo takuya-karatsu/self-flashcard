@@ -1,4 +1,22 @@
 <h1> 問題作成 </h1>
 <%= form_with model: @flashcard do |form| %>
   <div>
+    <%= form.label :category %><br>
+    <%= form.text_field :category %>
+  </div>
+  <div>
+    <%= form.label :question %><br>
+    <%= form.text_area :question %>
+  </div>
+  <div>
+    <%= form.label :answer %><br>
+    <%= form.text_area :answer %>
+  </div>
+  <div>
+    <%= form.label :discription %><br>
+    <%= form.text_area :discription %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
 <% end %>
