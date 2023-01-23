@@ -11,7 +11,7 @@ class FlashcardsController < ApplicationController
 
   #問題の作成
   def new
-
+    @flashcard = Flashcard.new
   end
 
   #問題の登録
@@ -31,6 +31,6 @@ class FlashcardsController < ApplicationController
 
   #問題の削除
   def destroy
-    
+
   end
 end
