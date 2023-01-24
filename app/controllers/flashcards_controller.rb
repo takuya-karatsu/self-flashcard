@@ -20,9 +20,12 @@ class FlashcardsController < ApplicationController
     #Flashcardモデルを初期化
     @flashcard = Flashcard.new(flashcard_params)
     #FlashcardモデルをDBへ保存
-    @flashcard.save
+    if @flashcard.save
     #showへリダイレクト
-    redirect_to @flashcard
+      redirect_to @flashcard
+    else
+      render 'new', status: :unprocessable_entity
+    end
   end
 
   #問題の編集

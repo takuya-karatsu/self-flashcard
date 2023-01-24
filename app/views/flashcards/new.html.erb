@@ -1,5 +1,14 @@
 <h1> Create flashcard </h1>
 <%= form_with model: @flashcard do |form| %>
+  <% if @flashcard.errors.any? %>
+    <div>
+      <ul>
+      <% @flashcard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div>
     <%= form.label :category %><br>
     <%= form.text_field :category %>
