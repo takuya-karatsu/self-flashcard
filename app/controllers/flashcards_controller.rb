@@ -1,8 +1,8 @@
 class FlashcardsController < ApplicationController
   #問題の一覧表示
   def index
-    @Flashcards = flashcard.all
-    
+    @flashcards = Flashcard.all
+
   end
 
   #問題解答ページ表示
