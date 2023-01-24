@@ -9,14 +9,15 @@ flashcards
     <th>question</th>
     <th>answer</th>
     <th>description</th>
+    <th></th>
   </tr>
   <% @flashcards.each do |flashcard| %>
   <tr>
     <td><%= flashcard.id %></td>
     <td><%= flashcard.category %></td>
-    <td><%= flashcard.question %><</td>
-    <td><%= flashcard.answer %><</td>
-    <td><%= flashcard.description %><</td>
+    <td><%= flashcard.question %></td>
+    <td><%= flashcard.answer %></td>
+    <td><%= flashcard.description %></td>
     <td><%= link_to 'show', flashcard_path(flashcard) %></td>
   </tr>
   <% end %>
