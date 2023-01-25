@@ -47,6 +47,8 @@ gem 'rails-i18n'
 gem 'pry-rails'
 gem 'ransack'
 gem 'kaminari'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 # Use Sass to process CSS
 gem "sassc-rails"
