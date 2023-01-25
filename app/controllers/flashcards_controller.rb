@@ -30,17 +30,24 @@ class FlashcardsController < ApplicationController
 
   #問題の編集
   def edit
-
+    @flashcard = Flashcard.find(params[:id])
   end
 
   #問題の更新
   def update
-
+    @flashcard = Flashcard.find(params[:id])
+    if @flashcard.update(flashcard_params)
+      redirect_to @flashcard
+    else
+      render 'edit', status: :unprocessable_entity
+    end
   end
 
   #問題の削除
   def destroy
-
+    @flashcard = Flashcard.find(params[:id])
+    @flashcard.destroy
+    redirect_to flashcards_path
   end
 
   private
