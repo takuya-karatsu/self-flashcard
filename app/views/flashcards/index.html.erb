@@ -9,7 +9,6 @@ flashcards
     <th>question</th>
     <th>answer</th>
     <th>description</th>
-    <th></th>
   </tr>
   <% @flashcards.each do |flashcard| %>
   <tr>
@@ -21,7 +20,7 @@ flashcards
     <td><%= link_to 'show', flashcard_path(flashcard) %></td>
     <td><%= link_to 'edit', edit_flashcard_path(flashcard) %></td>
     <td><%= link_to 'destroy', flashcard_path(flashcard),
-          data: { turbo_method: 'delete', turbo_comfirm: 'Are you sure?' } %></td>
+          data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>
 </table>
