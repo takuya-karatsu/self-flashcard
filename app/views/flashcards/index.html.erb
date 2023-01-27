@@ -1,7 +1,7 @@
 <h1>
 flashcards
 </h1>
-<%= link_to 'new', new_flashcard_path %>
+<%= button_to 'create flashcard', {controller: 'flashcards', action: 'new'}, {method: :get} %>
 <table>
   <tr>
     <th>ID</th>
@@ -17,9 +17,9 @@ flashcards
     <td><%= flashcard.question %></td>
     <td><%= flashcard.answer %></td>
     <td><%= flashcard.description %></td>
-    <td><%= link_to 'show', flashcard_path(flashcard) %></td>
-    <td><%= link_to 'edit', edit_flashcard_path(flashcard) %></td>
-    <td><%= button_to "destroy", flashcard_path(flashcard), method: :delete, confirm: :'Are you sure?' %></td>
+    <td><%= button_to 'show', flashcard_path(flashcard), method: :get %></td>
+    <td><%= button_to 'edit', edit_flashcard_path(flashcard), method: :get %></td>
+    <td><%= button_to "destroy", flashcard_path(flashcard), method: :delete %></td>
   </tr>
   <% end %>
 </table>
