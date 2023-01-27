@@ -47,7 +47,7 @@ class FlashcardsController < ApplicationController
   def destroy
     @flashcard = Flashcard.find(params[:id])
     @flashcard.destroy
-    redirect_to flashcards_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private
