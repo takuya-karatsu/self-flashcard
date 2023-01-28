@@ -1,0 +1,17 @@
+<h1>Learning</h1>
+<p>
+  question:<br>
+  <%= @flashcard.question %>
+</p>
+input[type= "checkbox"]:checked +p{
+  display:block;
+}
+<p style ="display: none">
+  answer:<br>
+  <%= @flashcard.answer %>
+</p>
+<p style = "display: none">
+  description:<br>
+  <%= @flashcard.description %>
+</p>
+<%= button_to 'learning answer', learning_answer_path, method: :get %>

@@ -50,6 +50,12 @@ class FlashcardsController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  #flashcardでの学習
+  def learning
+    quiz = rand(Flashcard.first.id..Flashcard.last.id)
+    @flashcard = Flashcard.where('id >=?', quiz).first
+  end
+
   private
   def flashcard_params
     params.require(:flashcard).permit(:category, :question, :answer, :description)
