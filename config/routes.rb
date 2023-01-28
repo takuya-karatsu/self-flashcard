@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "flashcards#index"
   resources :flashcards
+  get "/learning", to: "flashcards#learning"
 end

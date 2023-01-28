@@ -2,6 +2,7 @@
 flashcards
 </h1>
 <%= button_to 'create flashcard', {controller: 'flashcards', action: 'new'}, {method: :get} %>
+<%= button_to 'start learning', {controller: 'flashcards', action: 'learning'}, {method: :get} %>
 <table>
   <tr>
     <th>ID</th>
