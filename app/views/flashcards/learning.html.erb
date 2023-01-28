@@ -3,15 +3,10 @@
   question:<br>
   <%= @flashcard.question %>
 </p>
-input[type= "checkbox"]:checked +p{
-  display:block;
-}
-<p style ="display: none">
-  answer:<br>
-  <%= @flashcard.answer %>
-</p>
-<p style = "display: none">
-  description:<br>
+<label>check answer</label>
+<input type="checkbox">
+<p class= "answer">
+  answer:<br><br>
+  <%= @flashcard.answer %><br>
+description:<br>
   <%= @flashcard.description %>
-</p>
-<%= button_to 'learning answer', learning_answer_path, method: :get %>
