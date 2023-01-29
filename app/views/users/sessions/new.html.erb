@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h2>ログイン</h2>
+  <h3>ログイン</h3>
 
   <%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
     <%= render "users/shared/error_messages", resource: resource %>
@@ -21,8 +21,8 @@
         </div>
       <% end %>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
+      <div class="actions mt-2">
+        <%= f.submit "ログイン" %>
       </div>
     </div>
   <% end %>
