@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "flashcards#index"
+
   resources :flashcards
-  get "/learning", to: "flashcards#learning"
+    get "/learning", to: "flashcards#learning"
 end
