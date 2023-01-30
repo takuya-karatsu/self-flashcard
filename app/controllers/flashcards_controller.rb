@@ -1,5 +1,5 @@
 class FlashcardsController < ApplicationController
-  before_action :flashcard_set only: [:show, :edit, :update, :destroy]
+before_action :flashcard_set, only: [:show, :edit, :update, :destroy]
 
   #問題の一覧表示
   def index
