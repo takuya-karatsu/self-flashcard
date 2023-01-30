@@ -1,0 +1,7 @@
+.answer{
+  display:none;
+}
+
+input[type="checkbox"]:checked + .answer{
+  display:block;
+}
