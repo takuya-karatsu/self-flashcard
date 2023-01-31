@@ -1,5 +1,5 @@
 class FlashcardsController < ApplicationController
-before_action :flashcard_set, only: [:show, :edit, :update, :destroy]
+before_action :set_flashcard, only: [:show, :edit, :update, :destroy]
 
   #問題の一覧表示
   def index
@@ -58,7 +58,7 @@ before_action :flashcard_set, only: [:show, :edit, :update, :destroy]
     params.require(:flashcard).permit(:category, :question, :answer, :description)
   end
 
-  def flashcard_set
+  def set_flashcard
     @flashcard = Flashcard.find(params[:id])
   end
 end
