@@ -1,27 +1,26 @@
 <div class = "container">
   <h1 class="mt-3">
-  flashcards
+  暗記カード
   </h1>
-  <%= button_to 'create flashcard', {controller: 'flashcards', action: 'new'}, {method: :get} %>
-  <%= button_to 'start learning', {controller: 'flashcards', action: 'learning'}, {method: :get} %>
-  <table>
+  <%= button_to '暗記カードを作成', new_flashcard_path, method: :get, class: 'btn btn-primary' %>
+  <%= button_to '学習を開始', learning_path, method: :get, class: 'btn btn-primary' %>
+  <table class="table-striped">
     <tr>
-      <th class="col-1">ID</th>
-      <th class="col-2">category</th>
-      <th class="col-3">question</th>
-      <th class="col-3">answer</th>
-      <th class="col-3">description</th>
+      <th>ID</th>
+      <th>種類</th>
+      <th>問題</th>
+      <th>答え</th>
+      <th>解説</th>
     </tr>
     <% @flashcards.each do |flashcard| %>
     <tr>
-      <td class="col-1"><%= flashcard.id %></td>
-      <td class="col-2"><%= flashcard.category %></td>
-      <td class="col-3"><%= flashcard.question %></td>
-      <td class="col-3"><%= flashcard.answer %></td>
-      <td class="col-3"><%= flashcard.description %></td>
-      <td><%= button_to 'show', flashcard_path(flashcard), method: :get %></td>
-      <td><%= button_to 'edit', edit_flashcard_path(flashcard), method: :get %></td>
-      <td><%= button_to "destroy", flashcard_path(flashcard), method: :delete %></td>
+      <td><%= flashcard.id %></td>
+      <td><%= flashcard.category %></td>
+      <td><%= flashcard.question %></td>
+      <td><%= flashcard.answer %></td>
+      <td><%= flashcard.description %></td>
+      <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
+      <td><%= button_to "削除", flashcard_path(flashcard), method: :delete, class: 'btn btn-primary'%></td>
     </tr>
     <% end %>
   </table>

@@ -1,13 +1,8 @@
 class FlashcardsController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:edit, :update, :destroy]
   #問題の一覧表示
   def index
     @flashcards = Flashcard.all
-
-  end
-
-  #問題解答ページ表示
-  def show
   end
 
   #問題の作成
