@@ -1,5 +1,6 @@
 class FlashcardsController < ApplicationController
   before_action :set_flashcard, only: [:edit, :update, :destroy]
+
   #問題の一覧表示
   def index
     @flashcards = Flashcard.all
@@ -16,8 +17,8 @@ class FlashcardsController < ApplicationController
     @flashcard = Flashcard.new(flashcard_params)
     #FlashcardモデルをDBへ保存
     if @flashcard.save
-    #showへリダイレクト
-      redirect_to @flashcard
+    #indexへリダイレクト
+      redirect_to controller: 'flashcards', action: 'index'
     else
       render 'new', status: :unprocessable_entity
     end
@@ -29,8 +30,9 @@ class FlashcardsController < ApplicationController
 
   #問題の更新
   def update
+    @flashcards = Flashcard.all
     if @flashcard.update(flashcard_params)
-      redirect_to @flashcard
+      redirect_to controller: 'flashcards', action: 'index'
     else
       render 'edit', status: :unprocessable_entity
     end
@@ -39,7 +41,7 @@ class FlashcardsController < ApplicationController
   #問題の削除
   def destroy
     @flashcard.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to controller: 'flashcards', action: 'index', status: :see_other
   end
 
   #flashcardでの学習
