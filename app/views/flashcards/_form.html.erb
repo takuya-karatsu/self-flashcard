@@ -8,23 +8,23 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :種類 %><br>
-    <%= form.text_field :category %>
+  <div class="mt-3">
+    <%= form.label :種類, class: 'form-label' %><br>
+    <%= form.text_field :category, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :問題 %><br>
-    <%= form.text_area :question %>
+  <div class="mt-3">
+    <%= form.label :問題, class: 'form-label' %><br>
+    <%= form.text_area :question, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :答え %><br>
-    <%= form.text_area :answer %>
+  <div class="mt-3">
+    <%= form.label :答え, class: 'form-label' %><br>
+    <%= form.text_area :answer, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :解説 %><br>
-    <%= form.text_area :description %>
+  <div class="mt-3">
+    <%= form.label :解説, class: 'form-label' %><br>
+    <%= form.text_area :description, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.submit %>
+  <div class="mt-3">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

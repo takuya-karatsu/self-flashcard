@@ -2,9 +2,13 @@
   <h1 class="mt-3">
   暗記カード
   </h1>
-  <%= button_to '暗記カードを作成', new_flashcard_path, method: :get, class: 'btn btn-secondary' %>
-  <%= button_to '学習を開始', learning_path, method: :get, class: 'btn btn-secondary' %>
-  <table class="table-striped">
+  <div class="mt-3">
+    <%= button_to '暗記カードを作成', new_flashcard_path, method: :get, class: 'btn btn-primary' %>
+  </div>
+  <div class="mt-3">
+    <%= button_to '学習を開始', learning_path, method: :get, class: 'btn btn-primary' %>
+  </div>
+  <table id="table" class="mt-3 table-striped table-hover table-responsive table-lg">
     <tr>
       <th>ID</th>
       <th>種類</th>
@@ -19,8 +23,8 @@
       <td><%= flashcard.question %></td>
       <td><%= flashcard.answer %></td>
       <td><%= flashcard.description %></td>
-      <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-secondary'%></td>
-      <td><%= button_to "削除", flashcard_path(flashcard), method: :delete, class: 'btn btn-secondary'%></td>
+      <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
+      <td><%= button_to "削除", flashcard_path(flashcard), method: :delete, class: 'btn btn-primary'%></td>
     </tr>
     <% end %>
   </table>
