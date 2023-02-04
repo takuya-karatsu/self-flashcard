@@ -1,12 +1,20 @@
-<h1>学習</h1>
-<p>
-  question:<br>
-  <%= @flashcard.question %>
-</p>
-<label>check answer</label>
-<input type="checkbox">
-<p class= "answer">
-  answer:<br>
-  <%= @flashcard.answer %><br>
-description:<br>
-  <%= @flashcard.description %>
+<div class="container mt-5">
+  <h1>学習</h1>
+  <% @flashcards.each do |flashcard| %>
+  <div>
+    <p>
+      問題:<br>
+      <%= flashcard.question %>
+    </p>
+    <label>チェックして解答を確認</label>
+    <input type="checkbox">
+    <span class="answer">
+      <p>
+        解答:<br>
+        <%= flashcard.answer %><br>
+      解説:<br>
+        <%= flashcard.description %>
+      </span>
+  </div>
+  <% end %>
+</div>

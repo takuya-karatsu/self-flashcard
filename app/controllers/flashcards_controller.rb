@@ -46,8 +46,9 @@ class FlashcardsController < ApplicationController
 
   #flashcardでの学習
   def learning
-    quiz = rand(Flashcard.first.id..Flashcard.last.id)
-    @flashcard = Flashcard.where('id >=?', quiz).first
+    # quiz = rand(Flashcard.first.id..Flashcard.last.id)
+    # @flashcards = Flashcard.where('id >=?', quiz).all
+    @flashcards = Flashcard.order("RAND()").all
   end
 
   private
