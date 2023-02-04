@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <%= render "layouts/header"%>
+  <%= render "layouts/shared/header"%>
 
   <h3>新規会員登録</h3>
 
@@ -21,8 +21,8 @@
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %><br />
       </div>
 
       <div class="actions mt-2">
