@@ -1,0 +1,23 @@
+<div class = "container">
+  <p>
+    category:<br>
+    <%= @flashcard.category %>
+  </p>
+
+  <p>
+    question:<br>
+    <%= @flashcard.question %>
+  </p>
+
+  <p>
+    answer:<br>
+    <%= @flashcard.answer %>
+  </p>
+
+  <p>
+    description:<br>
+    <%= @flashcard.description %>
+  </p>
+
+  <%= button_to 'top', flashcards_path, method: :get %>
+</div>

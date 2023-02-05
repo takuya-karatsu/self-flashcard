@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <h1>学習</h1>
+  <% @flashcards.each do |flashcard| %>
+  <div>
+    <p>
+      問題:<br>
+      <%= flashcard.question %>
+    </p>
+    <label>チェックして解答を確認</label>
+    <input type="checkbox">
+    <div class="answer">
+      <p>
+        解答:<br>
+        <%= flashcard.answer %><br>
+      </p>
+      <p>
+        解説:<br>
+        <%= flashcard.description %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<%= form_with model: @flashcard do |form| %>
+  <% if @flashcard.errors.any? %>
+    <div>
+      <ul>
+      <% @flashcard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mt-3">
+    <%= form.label :種類, class: 'form-label' %><br>
+    <%= form.text_field :category, class: 'form-control' %>
+  </div>
+  <div class="mt-3">
+    <%= form.label :問題, class: 'form-label' %><br>
+    <%= form.text_area :question, class: 'form-control' %>
+  </div>
+  <div class="mt-3">
+    <%= form.label :答え, class: 'form-label' %><br>
+    <%= form.text_area :answer, class: 'form-control' %>
+  </div>
+  <div class="mt-3">
+    <%= form.label :解説, class: 'form-label' %><br>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+  <div class="mt-3">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
