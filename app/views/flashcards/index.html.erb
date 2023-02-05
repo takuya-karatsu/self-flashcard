@@ -1,13 +1,10 @@
 <div class = "container">
+  <%= render "layouts/shared/header"%>
+
   <h1 class="mt-3">
-  暗記カード
+    暗記カード
   </h1>
-  <div class="mt-3">
-    <%= button_to '暗記カードを作成', new_flashcard_path, method: :get, class: 'btn btn-primary' %>
-  </div>
-  <div class="mt-3">
-    <%= button_to '学習を開始', learning_path, method: :get, class: 'btn btn-primary' %>
-  </div>
+
   <table id="table" class="mt-3 table-striped table-hover table-responsive table-lg">
     <tr>
       <th>ID</th>
