@@ -8,13 +8,16 @@
     </p>
     <label>チェックして解答を確認</label>
     <input type="checkbox">
-    <span class="answer">
+    <div class="answer">
       <p>
         解答:<br>
         <%= flashcard.answer %><br>
-      解説:<br>
+      </p>
+      <p>
+        解説:<br>
         <%= flashcard.description %>
-      </span>
+      </p>
+    </div>
   </div>
   <% end %>
 </div>
