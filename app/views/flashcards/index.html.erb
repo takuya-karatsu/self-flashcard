@@ -12,6 +12,7 @@
       <th>問題</th>
       <th>答え</th>
       <th>解説</th>
+      <th>復習</th>
     </tr>
     <% @flashcards.each do |flashcard| %>
     <tr>
@@ -20,8 +21,10 @@
       <td><%= flashcard.question %></td>
       <td><%= flashcard.answer %></td>
       <td><%= flashcard.description %></td>
+      <td><%= render 'checked', flashcard: flashcard %></td>
       <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
       <td><%= button_to "削除", flashcard_path(flashcard), method: :delete, class: 'btn btn-primary'%></td>
+      
     </tr>
     <% end %>
   </table>

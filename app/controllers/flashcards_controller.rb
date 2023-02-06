@@ -44,6 +44,16 @@ class FlashcardsController < ApplicationController
     redirect_to controller: 'flashcards', action: 'index', status: :see_other
   end
 
+  def toggle
+    @flashcard = Flashcard.find(params[:id])
+    @flashcard.update(checkbox: !@flashcard.checkbox)
+    render turbo_stream: turbo_stream.replace(
+      @flashcard,
+      partial: 'checked',
+      locals: { flashcard: @flashcard }
+    )
+  end
+
   #flashcardでの学習
   def learning
     # quiz = rand(Flashcard.first.id..Flashcard.last.id)
