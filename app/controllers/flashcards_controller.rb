@@ -49,8 +49,8 @@ class FlashcardsController < ApplicationController
     @flashcard.update(checkbox: !@flashcard.checkbox)
     render turbo_stream: turbo_stream.replace(
       @flashcard,
-      partial: 'checked',
-      locals: { flashcard: @flashcard }
+      partial: 'checkbox',
+      locals: { flashcard: @flashcard}
     )
   end
 

@@ -1,7 +1,5 @@
 <%= turbo_frame_tag flashcard do%>
   <%= form_with model: flashcard, url: toggle_flashcard_path(flashcard) do |f| %>
-    <span>
-    <%= f.check_box :checkbox, onchange: 'this.form.requestSubmit()' %>
-    </span>
+    <%= f.check_box :checkbox, onchange: "this.form.requestSubmit()" %>
   <% end %>
 <% end %>
