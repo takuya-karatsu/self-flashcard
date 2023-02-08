@@ -1,6 +1,4 @@
 <div class="container mt-4">
-  <%= render "layouts/shared/header"%>
-  
   <h3>ログイン</h3>
 
   <%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
