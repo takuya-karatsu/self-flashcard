@@ -1,5 +1,5 @@
 class FlashcardsController < ApplicationController
-  before_action :set_flashcard, only: [:edit, :update, :destroy]
+  before_action :set_flashcard, only: [:edit, :update, :destroy, :toggle]
 
   #問題の一覧表示
   def index
@@ -45,7 +45,6 @@ class FlashcardsController < ApplicationController
   end
 
   def toggle
-    @flashcard = Flashcard.find(params[:id])
     @flashcard.update(checkbox: !@flashcard.checkbox)
     render turbo_stream: turbo_stream.replace(
       @flashcard,
