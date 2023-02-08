@@ -1,4 +1,5 @@
 class FlashcardsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_flashcard, only: [:edit, :update, :destroy]
 
   #問題の一覧表示
@@ -53,7 +54,7 @@ class FlashcardsController < ApplicationController
 
   private
   def flashcard_params
-    params.require(:flashcard).permit(:category, :question, :answer, :description)
+    params.require(:flashcard).permit(:category, :question, :answer, :description).merge(user_id: current_user.id)
   end
 
   def set_flashcard
