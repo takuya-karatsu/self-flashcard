@@ -20,8 +20,9 @@
       <td><%= flashcard.answer %></td>
       <td><%= flashcard.description %></td>
       <td><%= render 'checkbox', flashcard: flashcard %></td>
-      <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
-      <td><%= button_to "削除", flashcard_path(flashcard), method: :delete, class: 'btn btn-primary'%></td>
+      <td><%= link_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
+      <td><%= link_to "削除", flashcard_path(flashcard), method: :delete, 
+      data: {confirm: '本当に削除してよろしいですか？'}, class: 'btn btn-primary'%></td>
       
     </tr>
     <% end %>
