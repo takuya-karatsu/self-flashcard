@@ -6,6 +6,9 @@
       問題:<br>
       <%= flashcard.question %>
     </p>
+    <p>あとで復習:<br>
+    <%= render 'checkbox', flashcard: flashcard %>
+    </p>
     <label>チェックして解答を確認</label>
     <input type="checkbox">
     <div class="answer">
