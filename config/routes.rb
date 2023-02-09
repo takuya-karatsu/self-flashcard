@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     end
   end
     get "/learning", to: "flashcards#learning"
+    get "/review", to: "flashcards#review"
 end

@@ -60,6 +60,10 @@ class FlashcardsController < ApplicationController
     @flashcards = Flashcard.order("RAND()").all
   end
 
+  def review
+    @flashcards = Flashcard.order("RAND()").where(checkbox:"true")
+  end
+
   private
   def flashcard_params
     params.require(:flashcard).permit(:category, :question, :answer, :description)
