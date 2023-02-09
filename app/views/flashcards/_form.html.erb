@@ -10,7 +10,7 @@
   <% end %>
   <div class="mt-3">
     <%= form.label :種類, class: 'form-label' %><br>
-    <%= form.text_field :category, class: 'form-control' %>
+    <%= form.select :category, ["テクノロジ系", "ストラテジ系", "マネジメント系"] %>
   </div>
   <div class="mt-3">
     <%= form.label :問題, class: 'form-label' %><br>
