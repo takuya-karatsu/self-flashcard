@@ -1,4 +1,33 @@
-#table{
-line-height: 3em;
-display: flex;
+table.table-main {
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+
+.table-main th{
+  line-height: 3em;
+}
+
+.first-column {
+  width: 5%;
+}
+
+.second-column {
+  width: 15%;
+}
+
+.third-column {
+  width: 20%;
+}
+
+.forth-column {
+  width: 20%;
+}
+
+.fifth-column {
+  width: 20%;
+}
+
+.table-main td {
+  height: 80px;
 }

@@ -3,21 +3,21 @@
     暗記カード
   </h1>
 
-  <table id="table" class="mt-3 table-striped table-hover table-responsive table-lg">
+  <table id="table" class="mt-3 table-striped table-hover table-responsive table-lg table-main">
     <tr>
-      <th>ID</th>
-      <th>種類</th>
-      <th>問題</th>
-      <th>答え</th>
-      <th>解説</th>
+      <th class="first-column">ID</th>
+      <th class="second-column">種類</th>
+      <th class="third-column">問題</th>
+      <th class="forth-column">答え</th>
+      <th class="fifth-column">解説</th>
     </tr>
     <% @flashcards.each do |flashcard| %>
     <tr>
-      <td><%= flashcard.id %></td>
-      <td><%= flashcard.category %></td>
-      <td><%= flashcard.question %></td>
-      <td><%= flashcard.answer %></td>
-      <td><%= flashcard.description %></td>
+      <td class="first-column"><%= flashcard.id %></td>
+      <td class="second-column"><%= flashcard.category %></td>
+      <td class="third-column"><%= flashcard.question %></td>
+      <td class="forth-column"><%= flashcard.answer %></td>
+      <td class="fifth-column"><%= flashcard.description %></td>
       <% if current_user.id == flashcard.user.id %>
         <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
         <td><%= button_to "削除", flashcard_path(flashcard), method: :delete, class: 'btn btn-primary'%></td>
