@@ -6,21 +6,21 @@
 
   <table id="table" class="mt-3 table-striped table-hover table-responsive table-lg">
     <tr>
-      <th>ID</th>
-      <th>種類</th>
-      <th>問題</th>
-      <th>答え</th>
-      <th>解説</th>
-      <th>復習</th>
+      <th class="col-1">ID</th>
+      <th class="col-2">種類</th>
+      <th class="col-2">問題</th>
+      <th class="col-3" >答え</th>
+      <th class="col-3">解説</th>
+      <th class="col-1">復習</th>
     </tr>
     <% @flashcards.each do |flashcard| %>
     <tr>
-      <td><%= flashcard.id %></td>
-      <td><%= flashcard.category %></td>
-      <td><%= flashcard.question %></td>
-      <td><%= flashcard.answer %></td>
-      <td><%= flashcard.description %></td>
-      <td><%= render 'checkbox', flashcard: flashcard %></td>
+      <td class="col-1"><%= flashcard.id %></td>
+      <td class="col-2"><%= flashcard.category %></td>
+      <td class="col-2"><%= flashcard.question %></td>
+      <td class="col-3"><%= flashcard.answer %></td>
+      <td class="col-3"><%= flashcard.description %></td>
+      <td class="col-1"><%= render 'checkbox', flashcard: flashcard %></td>
       <td>
         <div class="dropdown" role="group">
           <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
