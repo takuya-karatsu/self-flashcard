@@ -1,6 +1,7 @@
 class FlashcardsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_flashcard, only: [:edit, :update, :destroy]
+  before_action :set_flashcard_q, only: [:index, :search]
 
   #問題の一覧表示
   def index
@@ -52,6 +53,10 @@ class FlashcardsController < ApplicationController
     @flashcards = Flashcard.order("RAND()").all
   end
 
+  def search
+    @result = @q.result.includes(:user).order("created_at desc")
+  end
+
   private
   def flashcard_params
     params.require(:flashcard).permit(:category, :question, :answer, :description).merge(user_id: current_user.id)
@@ -59,5 +64,9 @@ class FlashcardsController < ApplicationController
 
   def set_flashcard
     @flashcard = Flashcard.find(params[:id])
+  end
+
+  def set_flashcard_q
+    @q = Flashcard.ransack(params[:q])
   end
 end
