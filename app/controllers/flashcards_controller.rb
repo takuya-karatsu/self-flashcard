@@ -54,7 +54,7 @@ class FlashcardsController < ApplicationController
   end
 
   def search
-    @result = @q.result.includes(:user).order("created_at desc")
+    @results = @q.result.includes(:user).order("created_at desc")
   end
 
   private
