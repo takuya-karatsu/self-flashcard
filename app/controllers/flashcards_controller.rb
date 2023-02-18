@@ -5,7 +5,7 @@ class FlashcardsController < ApplicationController
 
   #問題の一覧表示
   def index
-    @flashcards = Flashcard.all
+    @flashcards = Flashcard.all.includes(:user)
   end
 
   #問題の作成
