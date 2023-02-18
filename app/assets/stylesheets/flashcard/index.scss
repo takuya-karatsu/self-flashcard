@@ -1,3 +1,13 @@
+.flashcard-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-field {
+  border-radius: 10px;
+  padding: 4px;
+}
+
 table.table-main {
   display: flex;
   text-align: center;

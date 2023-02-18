@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :flashcards
-    get "/learning", to: "flashcards#learning"
+  get "/learning", to: "flashcards#learning"
 end

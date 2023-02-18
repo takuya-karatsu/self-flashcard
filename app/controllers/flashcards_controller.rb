@@ -4,7 +4,8 @@ class FlashcardsController < ApplicationController
 
   #問題の一覧表示
   def index
-    @flashcards = Flashcard.all
+    @q = Flashcard.ransack(params[:q])
+    @flashcards = @q.result.includes(:user).order("created_at asc")
   end
 
   #問題の作成
