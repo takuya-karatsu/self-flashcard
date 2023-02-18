@@ -1,23 +1,24 @@
-<div class = "container">
-  <p>
-    category:<br>
-    <%= @flashcard.category %>
-  </p>
+<div class="show-main pt-3">
+  <div class="container">
+    <p class="show-field">
+      種類:<br>
+      <%= @flashcard.category %>
+    </p>
 
-  <p>
-    question:<br>
-    <%= @flashcard.question %>
-  </p>
+    <p class="show-field">
+      問題:<br>
+      <%= @flashcard.question %>
+    </p>
 
-  <p>
-    answer:<br>
-    <%= @flashcard.answer %>
-  </p>
+    <p class="show-field">
+      答え:<br>
+      <%= @flashcard.answer %>
+    </p>
 
-  <p>
-    description:<br>
-    <%= @flashcard.description %>
-  </p>
+    <p class="show-field">
+      解説:<br>
+      <%= @flashcard.description %>
+    </p>
 
-  <%= button_to 'top', flashcards_path, method: :get %>
+  </div>
 </div>
