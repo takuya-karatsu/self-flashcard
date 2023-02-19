@@ -1,23 +1,20 @@
-<div class = "container">
-  <p>
-    category:<br>
-    <%= @flashcard.category %>
-  </p>
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-header">
+      【問題】<br><%= @flashcard.question %>
+    </div>
 
-  <p>
-    question:<br>
-    <%= @flashcard.question %>
-  </p>
+    <div class="card-body">
+      <h5 class="card-title">
+        【答え】<br><%= @flashcard.answer %>
+      </h5>
+      <p class="card-text">
+        【解説】<br><%= @flashcard.description %>
+      </p>
+      <p class="card-text">
+        【この問題のジャンル】<br><%= @flashcard.category %>
+      </p>
+    </div>
 
-  <p>
-    answer:<br>
-    <%= @flashcard.answer %>
-  </p>
-
-  <p>
-    description:<br>
-    <%= @flashcard.description %>
-  </p>
-
-  <%= button_to 'top', flashcards_path, method: :get %>
+  </div>
 </div>

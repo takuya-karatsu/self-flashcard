@@ -1,6 +1,6 @@
 class FlashcardsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_flashcard, only: [:edit, :update, :destroy]
+  before_action :set_flashcard, only: [:edit, :update, :show, :destroy]
 
   #問題の一覧表示
   def index
@@ -38,6 +38,9 @@ class FlashcardsController < ApplicationController
     else
       render 'edit', status: :unprocessable_entity
     end
+  end
+
+  def show
   end
 
   #問題の削除

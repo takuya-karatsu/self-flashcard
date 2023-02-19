@@ -19,17 +19,17 @@
       <th class="fifth-column">解説</th>
     </tr>
     <% @flashcards.each do |flashcard| %>
-    <tr>
-      <td class="first-column"><%= flashcard.id %></td>
-      <td class="second-column"><%= flashcard.category %></td>
-      <td class="third-column"><%= flashcard.question %></td>
-      <td class="forth-column"><%= flashcard.answer %></td>
-      <td class="fifth-column"><%= flashcard.description %></td>
-      <% if current_user.id == flashcard.user.id %>
-        <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
-        <td><%= button_to "削除", flashcard_path(flashcard), method: :delete, class: 'btn btn-primary'%></td>
-      <% end %>
-    </tr>
+      <tr>
+        <td class="first-column"><%= link_to flashcard.id, flashcard_path(flashcard) %></td>
+        <td class="second-column"><%= flashcard.category %></td>
+        <td class="third-column"><%= flashcard.question %></td>
+        <td class="forth-column"><%= flashcard.answer %></td>
+        <td class="fifth-column"><%= flashcard.description %></td>
+        <% if current_user.id == flashcard.user.id %>
+          <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
+          <td><%= button_to "削除", flashcard_path(flashcard), method: :delete, class: 'btn btn-primary'%></td>
+        <% end %>
+      </tr>
     <% end %>
   </table>
 </div>
