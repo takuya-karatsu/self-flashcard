@@ -1,7 +1,7 @@
 .answer{
-  opacity: 0;
+  visibility: hidden;
 }
 
 input[type="checkbox"]:checked +.answer{
-  opacity: 1;
+  visibility: visible;
 }
