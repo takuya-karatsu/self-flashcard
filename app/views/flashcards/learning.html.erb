@@ -5,12 +5,12 @@
 
   <table id="table" class="mt-3 table-striped table-hover table-responsive table-lg">
     <tr>
-      <th>ID</th>
-      <th>種類</th>
-      <th>問題</th>
-      <th>答え</th>
-      <th>解説</th>
-      <th>答えを確認</th>
+      <th><%= Flashcard.human_attribute_name(:id) %></th>
+      <th><%= Flashcard.human_attribute_name(:category) %></th>
+      <th><%= Flashcard.human_attribute_name(:question) %></th>
+      <th><%= Flashcard.human_attribute_name(:answer) %></th>
+      <th><%= Flashcard.human_attribute_name(:description) %></th>
+      <th><%= Flashcard.human_attribute_name(:answer) %>を確認</th>
     </tr>
     <% @flashcards.each do |flashcard| %>
     <tr>

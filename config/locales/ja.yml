@@ -1,8 +1,17 @@
 ja:
   activerecord:
+    models:
+      user: ユーザー
+      flashcard: 暗記カード
     attributes:
       user:
         email: メールアドレス
         password: パスワード
         name: ユーザー名
         remember_me: 次回から自動的にログイン
+      flashcard:
+        id: ID
+        category: カテゴリー
+        question: 問題
+        answer: 解答
+        description: 解説
