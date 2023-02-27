@@ -1,6 +1,6 @@
-#answerHidden{ visibility: hidden;
+.answerHidden {
+  visibility: hidden;
 }
-
-input[type="checkbox"]:checked + #answerHidden{
-  visibility: visible;
+.discriptionHidden {
+  visibility: hidden;
 }
