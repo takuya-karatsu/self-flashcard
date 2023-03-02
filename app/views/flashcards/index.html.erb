@@ -24,7 +24,7 @@
     <% @flashcards.each do |flashcard| %>
       <tr>
         <td class="first-column"><%= link_to flashcard.id, flashcard_path(flashcard) %></td>
-        <td class="second-column table-content"><%= flashcard.category %></td>
+        <td class="second-column"><%= flashcard.category %></td>
         <td class="third-column"><%= flashcard.question %></td>
         <td class="forth-column"><%= flashcard.answer %></td>
         <td class="fifth-column"><%= flashcard.description %></td>
