@@ -12,10 +12,16 @@ table.table-main {
   display: flex;
   text-align: center;
   width: 100%;
+  font-size: 14px;
 }
 
 .table-main th{
   line-height: 3em;
+}
+
+.table-main td {
+  height: 80px;
+  padding: 4px;
 }
 
 .first-column {
@@ -38,6 +44,6 @@ table.table-main {
   width: 20vw;
 }
 
-.table-main td {
-  height: 80px;
+.sixth-column {
+  width: 5vw;
 }
