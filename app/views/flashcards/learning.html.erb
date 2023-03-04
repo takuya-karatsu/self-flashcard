@@ -7,23 +7,23 @@
 }
 </style>
 
-<div class = "container">
+<div class="container">
   <h1 class="mt-3">
     学習
   </h1>
 
-  <table id="table" class="mt-3 table-striped table-hover table-responsive table-lg">
+  <table id="table" class="mt-3 table-striped table-hover table-responsive table-lg learning-main">
     <tr>
-      <th><%= Flashcard.human_attribute_name(:id) %></th>
-      <th><%= Flashcard.human_attribute_name(:category) %></th>
-      <th><%= Flashcard.human_attribute_name(:question) %></th>
-      <th><%= Flashcard.human_attribute_name(:answer) %></th>
-      <th><%= Flashcard.human_attribute_name(:description) %></th>
-      <th><%= Flashcard.human_attribute_name(:answer) %>を確認</th>
+      <th class="learning-first"><%= Flashcard.human_attribute_name(:id) %></th>
+      <th class="learning-second"><%= Flashcard.human_attribute_name(:category) %></th>
+      <th class="learning-third"><%= Flashcard.human_attribute_name(:question) %></th>
+      <th class="learning-forth"><%= Flashcard.human_attribute_name(:answer) %></th>
+      <th class="learning-fifth"><%= Flashcard.human_attribute_name(:description) %></th>
+      <th class="learning-sixth"><%= Flashcard.human_attribute_name(:answer) %>を確認</th>
     </tr>
     <% @flashcards.each do |flashcard| %>
     <tr>
-      <td><%= flashcard.id %></td>
+      <td><%= link_to flashcard.id, flashcard_path(flashcard) %></td>
       <td><%= flashcard.category %></td>
       <td><%= safe_join(flashcard.question.split("\n"),tag(:br)) %></td>
       <td><div class="answerHidden"><%= safe_join(flashcard.answer.split("\n"),tag(:br)) %></div></td>
