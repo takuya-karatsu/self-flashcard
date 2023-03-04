@@ -17,18 +17,22 @@
       <th class="third-column"><%= Flashcard.human_attribute_name(:question) %></th>
       <th class="forth-column"><%= Flashcard.human_attribute_name(:answer) %></th>
       <th class="fifth-column"><%= Flashcard.human_attribute_name(:description) %></th>
+      <% if @flashcards.pluck(:user_id).include?(current_user.id.to_s) %>
+        <th class="sixth-column"></th>
+      <% end %>
     </tr>
     <% @flashcards.each do |flashcard| %>
       <tr>
         <td class="first-column"><%= link_to flashcard.id, flashcard_path(flashcard) %></td>
         <td class="second-column"><%= flashcard.category %></td>
-        <td class="third-column"><%= flashcard.question %></td>
-        <td class="forth-column"><%= flashcard.answer %></td>
-        <td class="fifth-column"><%= flashcard.description %></td>
+        <td class="third-column"><%= safe_join(flashcard.question.split("\n"),tag(:br)) %></td>
+        <td class="forth-column"><%= safe_join(flashcard.answer.split("\n"),tag(:br)) %></td>
+        <td class="fifth-column"><%= safe_join(flashcard.description.split("\n"),tag(:br)) %></td>
         <% if current_user.id == flashcard.user.id %>
-          <td><%= button_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary'%></td>
-          <td><%= link_to "削除", flashcard_path(flashcard), method: :delete, 
-            data: {confirm: '本当に削除してよろしいですか？'}, class: 'btn btn-primary' %></td>
+          <td class="sixth-column">
+            <%= link_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary mb-1'%>
+            <%= link_to "削除", flashcard_path(flashcard), method: :delete, data: {confirm: '本当に削除してよろしいですか？'}, class: 'btn btn-primary' %>
+          </td>
         <% end %>
       </tr>
     <% end %>

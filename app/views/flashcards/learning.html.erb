@@ -25,9 +25,9 @@
     <tr>
       <td><%= flashcard.id %></td>
       <td><%= flashcard.category %></td>
-      <td><%= flashcard.question %></td>
-      <td><div class="answerHidden"><%= flashcard.answer %></div></td>
-      <td><div class="discriptionHidden"><%= flashcard.description %></div></td>
+      <td><%= safe_join(flashcard.question.split("\n"),tag(:br)) %></td>
+      <td><div class="answerHidden"><%= safe_join(flashcard.answer.split("\n"),tag(:br)) %></div></td>
+      <td><div class="discriptionHidden"><%= safe_join(flashcard.description.split("\n"),tag(:br)) %></div></td>
       <td><input type="button" value="表示" onclick="toggleAnswerVisibility(this)" /></td>
     </tr>
     <% end %>
