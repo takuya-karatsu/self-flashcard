@@ -25,9 +25,9 @@
       <tr>
         <td class="first-column"><%= link_to flashcard.id, flashcard_path(flashcard) %></td>
         <td class="second-column"><%= flashcard.category %></td>
-        <td class="third-column"><%= flashcard.question %></td>
-        <td class="forth-column"><%= flashcard.answer %></td>
-        <td class="fifth-column"><%= flashcard.description %></td>
+        <td class="third-column"><%= safe_join(flashcard.question.split("\n"),tag(:br)) %></td>
+        <td class="forth-column"><%= safe_join(flashcard.answer.split("\n"),tag(:br)) %></td>
+        <td class="fifth-column"><%= safe_join(flashcard.description.split("\n"),tag(:br)) %></td>
         <% if current_user.id == flashcard.user.id %>
           <td class="sixth-column">
             <%= link_to '編集', edit_flashcard_path(flashcard), method: :get, class: 'btn btn-primary mb-1'%>
