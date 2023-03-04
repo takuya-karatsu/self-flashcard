@@ -1,15 +1,15 @@
 <div class="container mt-3">
   <div class="card">
     <div class="card-header">
-      【問題】<br><%= @flashcard.question %>
+      【問題】<br><%= safe_join(@flashcard.question.split("\n"),tag(:br)) %>
     </div>
 
     <div class="card-body">
       <p class="card-title">
-        【答え】<br><%= @flashcard.answer %>
+        【答え】<br><%= safe_join(@flashcard.answer.split("\n"),tag(:br)) %>
       </p>
       <p class="card-text">
-        【解説】<br><%= @flashcard.description %>
+        【解説】<br><%= safe_join(@flashcard.description.split("\n"),tag(:br)) %>
       </p>
       <p class="card-text">
         【この問題のジャンル】<br><%= @flashcard.category %>
