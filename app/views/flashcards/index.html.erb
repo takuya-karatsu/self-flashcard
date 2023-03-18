@@ -14,9 +14,7 @@
     <tr>
       <th class="first-column"><%= Flashcard.human_attribute_name(:category) %></th>
       <th class="second-column"><%= Flashcard.human_attribute_name(:question) %></th>
-      <% if @flashcards.pluck(:user_id).include?(current_user.id.to_s) %>
-        <th class="third-column"></th>
-      <% end %>
+      <th class="third-column"></th>
     </tr>
     <% @flashcards.each do |flashcard| %>
       <tr>
