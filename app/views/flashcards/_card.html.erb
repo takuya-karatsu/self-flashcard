@@ -1,0 +1,18 @@
+<tr>
+  <td class="first-column"><%= flashcard.category %></td>
+  <td class="second-column"><%= safe_join(flashcard.question.split("\n"),tag(:br)) %></td>
+  <td class="third-column">
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        ...
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to '答えを確認', flashcard_path(flashcard), class:"dropdown-item" %>
+        <% if current_user.id == flashcard.user.id %>
+          <%= link_to '編集', edit_flashcard_path(flashcard), class:"dropdown-item" %>
+          <%= link_to "削除", flashcard_path(flashcard), method: :delete, class:"dropdown-item", data: {confirm: '本当に削除してよろしいですか？'} %>
+        <% end %>
+      </ul>
+    </div>
+  </td>
+</tr>
