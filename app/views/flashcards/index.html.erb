@@ -22,17 +22,29 @@
       <td class="col-3"><%= flashcard.description %></td>
       <td class="col-1"><%= render 'checkbox', flashcard: flashcard %></td>
       <td>
-        <div class="dropdown" role="group">
-          <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <%= link_to '編集', edit_flashcard_path(flashcard), method: :get, class: "dropdown-item" %>
-          <%= link_to "削除", flashcard_path(flashcard), method: :delete, 
-            data: {confirm: '本当に削除してよろしいですか？'}, class: "dropdown-item" %>
+        <div class="dropdown">
+          <a class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item"><%= link_to '編集', edit_flashcard_path(flashcard), method: :get, class: "dropdown-item" %></a>
+            <a class="dropdown-item"><%= link_to "削除", flashcard_path(flashcard), method: :delete, 
+              data: {confirm: '本当に削除してよろしいですか？'}, class: "dropdown-item" %></a>
+          </div>
         </div>
-      </div>
     </td>
     </tr>
     <% end %>
   </table>
+</div>
+
+<div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
 </div>
