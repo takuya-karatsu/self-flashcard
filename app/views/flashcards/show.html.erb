@@ -1,18 +1,18 @@
 <div class="container mt-3">
   <div class="card">
     <div class="card-header">
-      【問題】<br><%= safe_join(@flashcard.question.split("\n"),tag(:br)) %>
+      【<%= Flashcard.human_attribute_name(:question) %>】<br><%= safe_join(@flashcard.question.split("\n"),tag(:br)) %>
     </div>
 
     <div class="card-body">
       <p class="card-title">
-        【答え】<br><%= safe_join(@flashcard.answer.split("\n"),tag(:br)) %>
+        【<%= Flashcard.human_attribute_name(:answer) %>】<br><%= safe_join(@flashcard.answer.split("\n"),tag(:br)) %>
       </p>
       <p class="card-text">
-        【解説】<br><%= safe_join(@flashcard.description.split("\n"),tag(:br)) %>
+        【<%= Flashcard.human_attribute_name(:description) %>】<br><%= safe_join(@flashcard.description.split("\n"),tag(:br)) %>
       </p>
       <p class="card-text">
-        【この問題のジャンル】<br><%= @flashcard.category %>
+        【<%= Flashcard.human_attribute_name(:category) %>】<br><%= @flashcard.category %>
       </p>
     </div>
 

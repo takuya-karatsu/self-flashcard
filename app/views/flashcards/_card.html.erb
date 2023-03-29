@@ -7,7 +7,7 @@
         ...
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to '答えを確認', flashcard_path(flashcard), class:"dropdown-item" %>
+        <%= link_to "#{Flashcard.human_attribute_name(:answer)}を確認", flashcard_path(flashcard), class:"dropdown-item" %>
         <% if current_user.id == flashcard.user.id %>
           <%= link_to '編集', edit_flashcard_path(flashcard), class:"dropdown-item" %>
           <%= link_to "削除", flashcard_path(flashcard), method: :delete, class:"dropdown-item", data: {confirm: '本当に削除してよろしいですか？'} %>
