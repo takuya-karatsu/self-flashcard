@@ -40,20 +40,20 @@
 
 
 <script>
-function toggleAnswerVisibility(button) {
-  const row = button.parentNode.parentNode;
-  const answer = row.querySelector(".answer-hidden");
-  const discription = row.querySelector(".discription-hidden");
+  function toggleAnswerVisibility(button) {
+    const row = button.parentNode.parentNode;
+    const answer = row.querySelector(".answer-hidden");
+    const discription = row.querySelector(".discription-hidden");
 
-  if (answer.style.visibility === "visible") {
-    answer.style.visibility = "hidden";
-  } else {
-    answer.style.visibility = "visible";
+    if (answer.style.visibility === "visible") {
+      answer.style.visibility = "hidden";
+    } else {
+      answer.style.visibility = "visible";
+    }
+    if (discription.style.visibility === "visible") {
+      discription.style.visibility = "hidden";
+    } else {
+      discription.style.visibility = "visible";
+    }
   }
-  if (discription.style.visibility === "visible") {
-    discription.style.visibility = "hidden";
-  } else {
-    discription.style.visibility = "visible";
-  }
-}
 </script>
