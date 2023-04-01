@@ -8,9 +8,10 @@
       </ul>
     </div>
   <% end %>
+
   <div class="mt-3">
     <%= form.label :category, class: 'form-label' %><br>
-    <%= form.text_field :category, class: 'form-control' %>
+    <%= form.select :category, Flashcard::CATEGORY_LIST, {include_blank: 'カテゴリーを選択'}, {class: "new-category-field", required: true} %>
   </div>
   <div class="mt-3">
     <%= form.label :question, class: 'form-label' %><br>
