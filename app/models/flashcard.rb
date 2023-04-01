@@ -1,4 +1,6 @@
 class Flashcard < ApplicationRecord
+  CATEGORY_LIST = ["プログラミング", "データベース", "ネットワーク", "セキュリティ"]
+
   belongs_to :user
 
   validates :category, presence: true
