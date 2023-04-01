@@ -61,18 +61,21 @@ class FlashcardsController < ApplicationController
   end
 
   def toggle
+    @flashcard = Flashcard.find(params[:id])
     @flashcard.update(checkbox: !@flashcard.checkbox)
-    
+  
     respond_to do |format|
+      format.html
       format.turbo_stream do
         render turbo_stream: turbo_stream.replace(
           @flashcard,
-          partial: 'checkbox',
+          partial: "flashcard",
           locals: { flashcard: @flashcard }
         )
       end
     end
   end
+  
 
 
   private
