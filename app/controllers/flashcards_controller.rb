@@ -56,6 +56,25 @@ class FlashcardsController < ApplicationController
     @flashcards = Flashcard.order("RAND()").all
   end
 
+  def review
+    @flashcards = Flashcard.order("RAND()").where(checkbox:"true")
+  end
+
+  def toggle
+    @flashcard.update(checkbox: !@flashcard.checkbox)
+    
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(
+          @flashcard,
+          partial: 'checkbox',
+          locals: { flashcard: @flashcard }
+        )
+      end
+    end
+  end
+
+
   private
   def flashcard_params
     params.require(:flashcard).permit(:category, :question, :answer, :description).merge(user_id: current_user.id)

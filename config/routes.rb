@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :flashcards
   get "/learning", to: "flashcards#learning"
+  get "/review", to: "flashcards#review"
 end
