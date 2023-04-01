@@ -12,6 +12,7 @@
       <th class="learning-fifth"><%= Flashcard.human_attribute_name(:answer) %>を確認</th>
       <th class="learning-sixth"></th>
     </tr>
+
     <% @flashcards.each do |flashcard| %>
     <tr>
       <td><%= flashcard.category %></td>
@@ -34,6 +35,7 @@
       </td>
     </tr>
     <% end %>
+
   </table>
 </div>
 
