@@ -46,12 +46,18 @@ class FlashcardsController < ApplicationController
 
   def toggle
     @flashcard.update(checkbox: !@flashcard.checkbox)
-    render turbo_stream: turbo_stream.replace(
-      @flashcard,
-      partial: 'checkbox',
-      locals: { flashcard: @flashcard}
-    )
+    
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(
+          @flashcard,
+          partial: 'checkbox',
+          locals: { flashcard: @flashcard }
+        )
+      end
+    end
   end
+  
 
   #flashcardでの学習
   def learning

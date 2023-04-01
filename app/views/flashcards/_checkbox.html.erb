@@ -1,5 +1,5 @@
 <%= turbo_frame_tag flashcard do%>
-  <%= form_with model: flashcard, url: toggle_flashcard_path(flashcard) do |f| %>
-    <%= f.check_box :checkbox, onchange: "this.form.requestSubmit()" %>
-  <% end %>
+<%= form_with model: flashcard, url: toggle_flashcard_path(flashcard), local: false, remote: true do |f| %>
+<%= f.check_box :checkbox, onchange: "event.preventDefault(); this.form.requestSubmit();" %>
+<% end %>
 <% end %>
