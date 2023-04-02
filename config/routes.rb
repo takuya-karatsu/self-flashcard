@@ -11,7 +11,10 @@ Rails.application.routes.draw do
     member do
       patch :toggle
     end
+    collection do
+      get :learning
+      get :review
+    end
   end
-    get "/learning", to: "flashcards#learning"
-    get "/review", to: "flashcards#review"
+
 end

@@ -57,11 +57,11 @@ class FlashcardsController < ApplicationController
   end
 
   def review
-    @flashcards = Flashcard.order("RAND()").where(checkbox:"true")
+    @flashcards = Flashcard.order("RAND()").where(checkbox:true)
   end
 
   def toggle
-    @flashcard = Flashcard.find(params[:id])
+    set_flashcard
     @flashcard.update(checkbox: !@flashcard.checkbox)
   
     respond_to do |format|
