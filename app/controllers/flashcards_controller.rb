@@ -32,7 +32,6 @@ class FlashcardsController < ApplicationController
 
   #問題の更新
   def update
-    @flashcards = Flashcard.all
     if @flashcard.update(flashcard_params)
       redirect_to controller: 'flashcards', action: 'index'
     else
