@@ -11,7 +11,7 @@ ja:
         remember_me: 次回から自動的にログイン
       flashcard:
         id: ID
-        category: カテゴリー
+        category: 分野
         question: 問題
         answer: 解答
         description: 解説
