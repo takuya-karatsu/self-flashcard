@@ -1,15 +1,15 @@
 <div class="container mt-3">
   <div class="card">
     <div class="card-header">
-      【<%= Flashcard.human_attribute_name(:question) %>】<br><%= safe_join(@flashcard.question.split("\n"),tag(:br)) %>
+      【<%= Flashcard.human_attribute_name(:question) %>】<br><%= @flashcard.question.reflect_newline %>
     </div>
 
     <div class="card-body">
       <p class="card-title">
-        【<%= Flashcard.human_attribute_name(:answer) %>】<br><%= safe_join(@flashcard.answer.split("\n"),tag(:br)) %>
+        【<%= Flashcard.human_attribute_name(:answer) %>】<br><%= @flashcard.answer.reflect_newline %>
       </p>
       <p class="card-text">
-        【<%= Flashcard.human_attribute_name(:description) %>】<br><%= safe_join(@flashcard.description.split("\n"),tag(:br)) %>
+        【<%= Flashcard.human_attribute_name(:description) %>】<br><%= @flashcard.description.reflect_newline %>
       </p>
       <p class="card-text">
         【<%= Flashcard.human_attribute_name(:category) %>】<br><%= @flashcard.category %>

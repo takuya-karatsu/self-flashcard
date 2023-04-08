@@ -16,9 +16,9 @@
     <% @flashcards.each do |flashcard| %>
     <tr>
       <td><%= flashcard.category %></td>
-      <td><%= safe_join(flashcard.question.split("\n"),tag(:br)) %></td>
-      <td><div class="answer-hidden"><%= safe_join(flashcard.answer.split("\n"),tag(:br)) %></div></td>
-      <td><div class="discription-hidden"><%= safe_join(flashcard.description.split("\n"),tag(:br)) %></div></td>
+      <td><%= flashcard.question.reflect_newline %></td>
+      <td><div class="answer-hidden"><%= flashcard.answer.reflect_newline %></div></td>
+      <td><div class="discription-hidden"><%= flashcard.description.reflect_newline %></div></td>
       <td><input type="button" value="表示" onclick="toggleAnswerVisibility(this)" /></td>
       <td>
         <% if current_user.id == flashcard.user.id %>
