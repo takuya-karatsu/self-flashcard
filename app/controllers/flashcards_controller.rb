@@ -5,7 +5,7 @@ class FlashcardsController < ApplicationController
   #問題の一覧表示
   def index
     @q = Flashcard.ransack(params[:q])
-    @flashcards = @q.result.includes(:user).order("flashcards.created_at desc")
+    @flashcards = @q.result.includes(:user).order("created_at desc")
   end
 
   #問題の作成
@@ -32,7 +32,6 @@ class FlashcardsController < ApplicationController
 
   #問題の更新
   def update
-    @flashcards = Flashcard.all
     if @flashcard.update(flashcard_params)
       redirect_to controller: 'flashcards', action: 'index'
     else

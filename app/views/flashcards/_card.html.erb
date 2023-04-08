@@ -1,6 +1,6 @@
 <tr>
   <td class="first-column"><%= flashcard.category %></td>
-  <td class="second-column"><%= safe_join(flashcard.question.split("\n"),tag(:br)) %></td>
+  <td class="second-column"><%= flashcard.question.reflect_newline %></td>
   <td class="third-column">
     <div class="dropdown">
       <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
