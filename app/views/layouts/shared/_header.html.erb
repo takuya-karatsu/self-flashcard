@@ -4,7 +4,8 @@
     <div class="header_main ml-lg-3">
       <div class="header-left">
         <%= button_to '暗記カードを作成', new_flashcard_path, method: :get, class: 'btn btn-primary' %>
-        <%= button_to '学習を開始', learning_path, method: :get, class: 'btn btn-primary ms-2' %>
+        <%= button_to '学習を開始', learning_flashcards_path, method: :get, class: 'btn btn-primary ms-2' %>
+        <%= button_to '復習を開始', review_flashcards_path, method: :get, class: 'btn btn-primary ms-2' %>
       </div>
 
       <div class="header-right">

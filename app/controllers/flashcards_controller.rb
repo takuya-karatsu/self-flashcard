@@ -1,6 +1,6 @@
 class FlashcardsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_flashcard, only: [:edit, :update, :show, :destroy]
+  before_action :set_flashcard, only: [:edit, :update, :show, :destroy, :toggle]
 
   #問題の一覧表示
   def index
@@ -54,6 +54,27 @@ class FlashcardsController < ApplicationController
     # @flashcards = Flashcard.where('id >=?', quiz).all
     @flashcards = Flashcard.order("RAND()").all
   end
+
+  def review
+    @flashcards = Flashcard.order("RAND()").where(checkbox:true)
+  end
+
+  def toggle
+    @flashcard.update(checkbox: !@flashcard.checkbox)
+  
+    respond_to do |format|
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(
+          @flashcard,
+          partial: "flashcard",
+          locals: { flashcard: @flashcard }
+        )
+      end
+    end
+  end
+  
+
 
   private
   def flashcard_params
