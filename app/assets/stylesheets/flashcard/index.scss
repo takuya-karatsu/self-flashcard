@@ -37,9 +37,11 @@
 }
 
 .second-column {
-  width: 70vw;
+  max-width: 70vw;
+  overflow-wrap: break-word;
 }
 
 .third-column {
-  width: 10vw;
+  max-width: 10vw;
+  overflow-wrap: break-word;
 }
